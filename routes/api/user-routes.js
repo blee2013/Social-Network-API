@@ -25,7 +25,7 @@ router.route('/')
     .post(createUser)
 
 // set up GET one, PUT and DELETE at /api/users/<userId>
-router.route('/:id')
+router.route('/:userId')
     // GET a single user by its _id and populated thought and friend data
     .get(getUserById)
     // PUT to update a user by its _id
