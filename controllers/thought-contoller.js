@@ -38,9 +38,12 @@ const thoughtController = {
     },
     //create a thought
     addThought({ params, body }, res) {
-        console.log({ params })
+        console.log("starting add thoughts fx")
+        //console.log({ params })
         Thought.create(body)
             .then(({ _id }) => {
+                console.log("index add thoughts fx");
+                console.log(_id);
                 return User.findOneAndUpdate(
                     { _id: body.userId },
                     { $push: { thoughts: _id } },

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const Thought = require("../../controllers/thought-contoller.js");
 
 const {
     getAllThoughts,
@@ -8,18 +9,17 @@ const {
     deleteThought,
     addReaction,
     deleteReaction
-} = require('../../controllers/user-controller');
+} = require('../../controllers/thought-contoller');
 
 
     
 router
     .route('/')
     // GET to get all thoughts
-    .get(getAllThoughts)
+    .get(Thought.getAllThoughts)
     //POST to create a new thought 
-    .post(addThought)
+    .post(Thought.addThought)
 
-=
 
 // /api/thoughts/<thoughtId>
 router.route('/:thoughtId')
